@@ -26,3 +26,8 @@ h1, h2, h3, h4, h5, h6{
     width: 100%    !important;
 	height: auto   !important;
 }
+
+video::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+}
