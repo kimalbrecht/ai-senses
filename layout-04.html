@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>AI Senses</title>
+  <meta name="description" content="">
+  <meta name="author" content="Kim Albrecht">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row" style="margin-top: 8%">
+      <div class="ten columns offset-by-one">
+        <h1 id="headline">AI Senses</h1>
+      </div>
+      <div class="five columns offset-by-four">
+        <p>Ai Senses visualizes sensor data of machines that surround us on a daily basis to develop an understanding how they experience the world.</p>
+      </div>
+    </div>
+
+    <div class="row" style="">
+      <div class="five columns">
+        <p class="sensorDescr sDleft">
+          Each vertical line represents one request of the latitude and longitude geolocation of the device. Rather than displaying the two numbers that are returned the visualization displays every digit of those numbers individually. What becomes visible is the accuracy on which the device locates itself. It is not uncommon that devices return their location with an accuracy to the sixth or seventh decimal place. This means the device returns its position to an accuracy of a few centimeters. The interesting part is that on every request the location of the device, even when it is not in motion, is constantly changing. The visualization makes these constant guessing of the machine visible. Each digit of the latitude and longitude values are represented by saturations of blue and magenta. Both created patterns are overlaid onto each other. Either the bottom layer is subtracted from the top layer or the other way around to always return a positive value.
+        </p>
+      </div>
+      <div class="five columns" id="locating">
+        <video class="videoInsert" poster="images/intro/cover/ai-senses-kim-albrecht-locating.jpg" onclick="this.play()" loop webkit-playsinline>
+          <source src="images/intro/ai-senses-kim-albrecht-locating.mp4" type="video/mp4">
+        </video>
+        <div class="sensorHeadline"><h6>Locating <span id="liveLocating" class="liveTag">live</span></h6></div>
+      </div>
+      <div class="five columns" id="seeing">
+        <video class="videoInsert" poster="images/intro/cover/ai-senses-kim-albrecht-seeing.jpg" onclick="this.play()" loop webkit-playsinline>
+          <source src="images/intro/ai-senses-kim-albrecht-seeing.mp4" type="video/mp4">
+        </video>
+        <div class="sensorHeadline"><h6>Seeing <span id="liveSeeing" class="liveTag">live</span></h6></div>
+      </div>
+    </div>
+
+    <div class="row" style="">
+      <div class="five columns" id="hearing">
+        <video class="videoInsert" poster="images/intro/cover/ai-senses-kim-albrecht-hearing.jpg" onclick="this.play()" loop webkit-playsinline>
+          <source src="images/intro/ai-senses-kim-albrecht-hearing.mp4" type="video/mp4">
+        </video>
+        <div class="sensorHeadline"><h6>Hearing <span id="liveHearing" class="liveTag">live</span></h6></div>
+      </div>
+      <div class="five columns" id="touching">
+        <video class="videoInsert" poster="images/intro/cover/ai-senses-kim-albrecht-touching.jpg" onclick="this.play()" loop webkit-playsinline>
+          <source src="images/intro/ai-senses-kim-albrecht-touching.mp4" type="video/mp4">
+        </video>
+        <div class="sensorHeadline"><h6>Touching <span id="liveTouching" class="liveTag">live</span></h6></div>
+      </div>
+    </div>
+
+    <div class="row" style="">
+      <div class="five columns" id="orienting">
+        <video class="videoInsert" poster="images/intro/cover/ai-senses-kim-albrecht-orienting.jpg" onclick="this.play()" loop webkit-playsinline>
+          <source src="images/intro/ai-senses-kim-albrecht-orienting.mp4" type="video/mp4">
+        </video>
+        <div class="sensorHeadline"><h6>Orienting <span id="liveOrienting" class="liveTag">live</span></h6></div>
+      </div>
+      <div class="five columns" id="moving">
+        <video class="videoInsert" poster="images/intro/cover/ai-senses-kim-albrecht-moving.jpg" onclick="this.play()" loop webkit-playsinline>
+          <source src="images/intro/ai-senses-kim-albrecht-moving.mp4" type="video/mp4">
+        </video>
+        <div class="sensorHeadline"><h6>Moving <span id="liveMoving" class="liveTag">live</span></h6></div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/sensor-check.js"></script>
+</body>
+</html>

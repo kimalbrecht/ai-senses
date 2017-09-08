@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5, h6{
 	text-transform: uppercase;
 }
 
+p{
+	line-height: 1.8rem;
+}
+
 #headline{
 /*	font-size: 10.0rem; 
 	line-height: 1.2;  
@@ -20,6 +24,43 @@ h1, h2, h3, h4, h5, h6{
 	font-size: 1.2rem;
 	vertical-align: .5rem;
 	visibility: hidden;
+}
+.description{
+	display: none;
+}
+.sensorDescr{
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+}
+.rightAlign{
+	text-align: right;
+}
+
+.grid-item { 
+	width: 48%; 
+	padding: 1%;
+}
+
+.grid-item { 
+	width: 100%; 
+}
+
+.sensorHeadline h6{
+	margin: 0px;
+}
+
+@media screen and (min-width: 500px) {
+	.grid-item { 
+		width: 48%; 
+		padding: 1%;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.grid-item { 
+		width: 31%; 
+		padding: 1%;
+	}
 }
 
 .videoInsert {

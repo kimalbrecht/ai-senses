@@ -6,6 +6,8 @@ var orienting = false;
 var moving = false;
 var locating = false;
 
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
 // // // // // // // // // // // // // // // // // // // // Seeing
 
 document.getElementById('liveTouching').style.visibility = "visible";
@@ -25,9 +27,9 @@ function handleErrorSee(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
 
-navigator.mediaDevices.getUserMedia(constraintsSee).
-    then(handleSuccessSee).catch(handleErrorSee);
-
+if (!isSafari) {
+  navigator.mediaDevices.getUserMedia(constraintsSee).then(handleSuccessSee).catch(handleErrorSee);
+}
 
 // // // // // // // // // // // // // // // // // // // // Hearing
 
@@ -44,9 +46,9 @@ function handleErrorHear(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
 
-navigator.mediaDevices.getUserMedia(constraintsHear).
-    then(handleSuccessHear).catch(handleErrorHear);
-
+if (!isSafari) {
+  navigator.mediaDevices.getUserMedia(constraintsHear).then(handleSuccessHear).catch(handleErrorHear);
+}
 
 // // // // // // // // // // // // // // // // // // // // Orienting
  
@@ -54,7 +56,7 @@ if (!orienting) {
   window.addEventListener('deviceorientation', function(event) {
     
     if (event.alpha !== null) {
-    	orienting = true;
+    	// orienting = true;
     	document.getElementById('liveOrienting').style.visibility = "visible";
     }
 
