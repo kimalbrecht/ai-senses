@@ -9,7 +9,7 @@ var iso = new Isotope( grid, {
 });
 
 
-imagesLoaded( grid ).on( 'progress', function() {
+imagesLoaded(grid).on( 'progress', function() {
   // layout Isotope after each image loads
   iso.layout();
 });
