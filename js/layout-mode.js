@@ -7,6 +7,11 @@ var iso = new Isotope( elem, {
   layoutMode: 'masonry' // fitRows // masonry
 });
 
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+
+var mobile = isMobileDevice();
 
 var classname = document.getElementsByClassName("grid-item");
 
@@ -20,14 +25,18 @@ var gridClick = function() {
 		document.getElementById(this.id+"Descr").style.display = "none";
 	    iso.arrange();
 
-		document.getElementById(this.id+"Video").pause();
+	    if (!mobile) {
+			document.getElementById(this.id+"Video").pause();
+		}
 	} else {
 		this.className += " infoOpen";
 
 		document.getElementById(this.id+"Descr").style.display = "block";
 	    iso.arrange();
 
-	    document.getElementById(this.id+"Video").play();
+	    if (!mobile) {
+	    	document.getElementById(this.id+"Video").play();
+	    }
 	}
 
 };
