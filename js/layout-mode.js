@@ -7,6 +7,11 @@ var iso = new Isotope( elem, {
   layoutMode: 'masonry' // fitRows // masonry
 });
 
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    iso.arrange();
+});
+
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 };
