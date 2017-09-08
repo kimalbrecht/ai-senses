@@ -10,6 +10,13 @@ p{
 	line-height: 1.8rem;
 }
 
+a{
+	color: #D1D1D1;
+}
+a:hover{
+	color: #B5B5B5;
+}
+
 #headline{
 /*	font-size: 10.0rem; 
 	line-height: 1.2;  
@@ -29,8 +36,9 @@ p{
 	display: none;
 }
 .sensorDescr{
-	font-size: 1.2rem;
-	line-height: 1.5rem;
+	font-size: 1.3rem;
+	line-height: 1.7rem;
+	margin-right: 20%;
 }
 .rightAlign{
 	text-align: right;
