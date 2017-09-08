@@ -1,35 +1,20 @@
 
 
-// var grid = document.querySelector('.grid');
-
-// var iso = new Isotope( grid, {
-//   // options
-//   itemSelector: '.grid-item',
-//   layoutMode: 'masonry' // fitRows // masonry
-// });
-
-
-// imagesLoaded(grid).on('progress', function() {
-//   // layout Isotope after each image loads
-//   console.log('goo')
-//   iso.layout();
-// });
-
 var grid = document.querySelector('.grid');
-var iso;
 
-imagesLoaded( grid, function() {
-  // init Isotope after all images have loaded
-  iso = new Isotope( grid, {
-    itemSelector: '.grid-item',
-    layoutMode: 'masonry'
-    // percentPosition: true,
-    // masonry: {
-    //   columnWidth: '.grid-sizer'
-    // }
-  });
+var iso = new Isotope( grid, {
+  // options
+  itemSelector: '.grid-item',
+  layoutMode: 'masonry' // fitRows // masonry
 });
 
+
+window.onload = function() {
+	iso.arrange();
+	setTimeout(function() {
+		iso.arrange();
+	}, 1000);
+}
 
 
 function isMobileDevice() {
