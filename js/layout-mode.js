@@ -1,16 +1,19 @@
 
 
-var elem = document.querySelector('.grid');
-var iso = new Isotope( elem, {
+var grid = document.querySelector('.grid');
+
+var iso = new Isotope( grid, {
   // options
   itemSelector: '.grid-item',
   layoutMode: 'masonry' // fitRows // masonry
 });
 
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    iso.arrange();
+imagesLoaded( grid ).on( 'progress', function() {
+  // layout Isotope after each image loads
+  iso.layout();
 });
+
 
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
