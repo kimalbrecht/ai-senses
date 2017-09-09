@@ -32,6 +32,18 @@ a:hover{
 	vertical-align: .5rem;
 	visibility: hidden;
 }
+.goLive{
+	font-weight: 300;
+	font-style: italic;
+	font-size: 1.8rem;
+	vertical-align: .5rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: #D1D1D1;
+	text-decoration: underline;
+	cursor:pointer;
+	visibility: hidden;
+}
 .description{
 	display: none;
 }

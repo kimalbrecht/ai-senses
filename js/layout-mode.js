@@ -3,17 +3,15 @@
 var grid = document.querySelector('.grid');
 
 var iso = new Isotope( grid, {
-  // options
-  itemSelector: '.grid-item',
-  layoutMode: 'masonry' // fitRows // masonry
+	// options
+	itemSelector: '.grid-item',
+	layoutMode: 'masonry', // fitRows // masonry
+	sortBy: 'random'
 });
 
 
 window.onload = function() {
 	iso.arrange();
-	setTimeout(function() {
-		iso.arrange();
-	}, 1000);
 }
 
 
