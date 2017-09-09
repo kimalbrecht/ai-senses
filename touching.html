@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<style>
+  body {
+    background-color: #000;
+    margin: 0px;
+  }
+
+  canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    position : fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
+</head>
+<body>
+<canvas id="canvas">
+<script>
+
+var windowW = window.innerWidth;
+var windowH = window.innerHeight;
+
+var windowRect;
+
+if (windowW < windowH) {
+  windowRect = windowW;
+} else {
+  windowRect = windowH;
+}
+
+
+var x = 0;
+var y = 0;
+
+var timing = 0;
+
+setInterval(function(){
+  timing += 0.01;
+}, 10);
+
+document.addEventListener("mousemove", function(e) {
+  if(timing > 0) {
+    x = e.clientX/windowW;
+    y = e.clientY/windowH;
+    draw(x,y,timing);
+    timing = 0;
+  }
+}, false);
+
+document.addEventListener('touchstart', function(e) {
+  if(timing > 0) {
+    x = e.touches[0].clientX/windowW;
+    y = e.touches[0].clientY/windowH;
+    draw(x,y,timing);
+    timing = 0;
+  }
+}, false);
+
+document.addEventListener('touchmove', function(e) {
+  if(timing > 0) {
+    x = e.touches[0].clientX/windowW;
+    y = e.touches[0].clientY/windowH;
+    draw(x,y,timing);
+    timing = 0;
+  }
+}, false);
+
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+
+ctx.canvas.width  = windowRect;
+ctx.canvas.height = windowRect;
+
+ctx.globalCompositeOperation = "difference";
+
+var count = 0;
+
+var startPos = 0;
+
+var sliceWidth = 4;
+
+var firstRound = true;
+
+var latGradient = ctx.createLinearGradient(0,0,0,windowRect);
+var latDataLength = 0;
+
+var lonGradient = ctx.createLinearGradient(0,0,0,windowRect);
+var lonDataLength = 0;
+
+function draw(lat,lon,time) {
+
+  if (startPos > windowRect) { 
+    startPos = 0; 
+  }
+
+  sliceWidth = Math.round(time*100);
+
+  ctx.globalCompositeOperation = "darken";
+
+  // ctx.fillStyle='#ffff00';
+  ctx.fillStyle='#000000';
+  // ctx.fillStyle='#ffffff';
+  ctx.fillRect(startPos,0,sliceWidth,windowRect);
+
+  ctx.globalCompositeOperation = "difference";
+
+  //////////// lat
+
+  latData = lat.toString().replace(".", "").split('');
+
+  latDataLength = latData.length;
+
+  latData.forEach(function(d,i) {
+    latGradient.addColorStop(i/latDataLength,"rgba("+d*25+",0,255,"+d/10+")");
+  });
+
+  ctx.fillStyle=latGradient;
+  ctx.fillRect(startPos,0,sliceWidth,windowRect);
+
+  //////////// lon
+
+  lonData = lon.toString().replace(".", "").split('');
+
+  lonDataLength = lonData.length;
+
+  lonData.forEach(function(d,i) {
+    lonGradient.addColorStop(i/lonDataLength,"rgba(0,"+d*25+",255,"+d/10+")");
+  });
+
+  ctx.fillStyle=lonGradient;
+  ctx.fillRect(startPos,0,sliceWidth,windowRect);
+
+  startPos += sliceWidth;
+
+  count += 1;
+
+}
+
+
+</script>
+</body>
+</html>

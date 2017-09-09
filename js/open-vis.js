@@ -1,24 +1,30 @@
 
+
 document.getElementById('touchingLiveButton').addEventListener('click', function() {
-	console.log('go')
+	openInNewTab('touching.html')
 });
 
 document.getElementById('seeingLiveButton').addEventListener('click', function() {
-	// body...
+	openInNewTab('seeing.html')
 });
 
 document.getElementById('hearingLiveButton').addEventListener('click', function() {
-	// body...
+	openInNewTab('hearing.html')
 });
 
 document.getElementById('orientingLiveButton').addEventListener('click', function() {
-	// body...
+	openInNewTab('orienting.html')
 });
 
 document.getElementById('movingLiveButton').addEventListener('click', function() {
-	// body...
+	openInNewTab('moving.html')
 });
 
 document.getElementById('locatingLiveButton').addEventListener('click', function() {
-	// body...
+	openInNewTab('locating.html')
 });
+
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
+}

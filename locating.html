@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<style>
+  body {
+    background-color: #000;
+    margin: 0px;
+  }
+
+  canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
+</head>
+<body>
+<canvas id="canvas">
+<script>
+
+var windowW = window.innerWidth;
+var windowH = window.innerHeight;
+
+var windowRect;
+
+if (windowW < windowH) {
+  windowRect = windowW;
+} else {
+  windowRect = windowH;
+}
+
+var lat;
+var lon;
+var accurat;
+
+function getGeo() {
+  navigator.geolocation.getCurrentPosition(function(position) {
+
+      lat = position.coords.latitude + 90;
+      lon = position.coords.longitude + 180;
+      accurat = position.coords.accuracy;
+
+      draw(lat,lon,accurat);
+
+  });
+}
+
+getGeo();
+
+
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+
+ctx.canvas.width  = windowRect;
+ctx.canvas.height = windowRect;
+
+ctx.globalCompositeOperation = "difference";
+
+var latGradient = ctx.createLinearGradient(0,0,0,windowRect);
+var latDataLength = 0;
+
+var lonGradient = ctx.createLinearGradient(0,0,0,windowRect);
+var lonDataLength = 0;
+
+var startPos = 0;
+
+var sliceWidth = windowRect;
+
+var firstRound = true;
+
+function draw(lat,lon,accurat) {
+
+  if (startPos > windowRect) {
+    startPos = 0;
+    if (sliceWidth > 1) {
+      sliceWidth = Math.ceil(sliceWidth/2);
+
+    }
+  }
+
+  ctx.globalCompositeOperation = "darken";
+  ctx.fillStyle='#000000';
+  ctx.fillRect(startPos,0,sliceWidth,windowRect);
+
+  ctx.globalCompositeOperation = "difference";
+
+  //////////// lat
+
+  latData = lat.toString().replace(".", "").split('');
+
+  latDataLength = latData.length;
+
+  latData.forEach(function(d,i) {
+    latGradient.addColorStop(i/latDataLength,"rgba(0,"+d*25+",255,"+d/10+")");
+  });
+
+  ctx.fillStyle=latGradient;
+  ctx.fillRect(startPos,0,sliceWidth,windowRect);
+
+  //////////// lon
+
+  lonData = lon.toString().replace(".", "").split('');
+
+  lonDataLength = lonData.length;
+
+  lonData.forEach(function(d,i) {
+    lonGradient.addColorStop(i/lonDataLength,"rgba(255,0,"+d*25+","+d/10+")");
+  });
+
+  ctx.fillStyle=lonGradient;
+  ctx.fillRect(startPos,0,sliceWidth,windowRect);
+
+  startPos += sliceWidth;
+
+  setTimeout(function() { getGeo(); }, 1);
+
+}
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+  body {
+    background-color: #000;
+    margin: 0px;
+  }
+
+  canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
+</head>
+<body>
+<canvas id="canvas">
+<script>
+
+var windowW = window.innerWidth;
+var windowH = window.innerHeight;
+
+var windowRect;
+
+if (windowW < windowH) {
+  windowRect = windowW;
+} else {
+  windowRect = windowH;
+}
+
+var direction;
+var titleFB;
+var tiltLR;
+
+
+if (window.DeviceOrientationEvent) {
+  deviceOrientation();
+}
+
+function deviceOrientation() {
+  window.addEventListener('deviceorientation', function(event) {
+    
+    direction = event.alpha/360; // from 0 to 360
+
+    tiltFB = (event.beta+180)/360; // -180 to 180
+
+    tiltLR = (event.gamma+90)/180; // -90 to 90
+
+    draw(direction, 0);
+    // draw(tiltFB, 100);
+    // draw(tiltLR, 200);
+
+
+  });
+}
+
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+
+ctx.canvas.width  = windowRect;
+ctx.canvas.height = windowRect;
+ctx.fillStyle = "#FFFFFF";
+
+var count = 0;
+
+var pos = 0;
+
+var color = 0;
+
+var data = 0;
+
+var dataLength = 0;
+
+function draw(sens) {
+
+  count += 1;
+
+  if (count > windowRect) { 
+    count = 0; 
+    pos += 40;
+    if (pos>(windowRect-40)) {
+      pos = 0;
+    }
+  }
+
+  data = sens.toString().split('');
+
+  data.splice(0, 2);
+
+  if (data.length > dataLength ) {
+    dataLength = data.length;
+  }
+
+  ctx.fillStyle = "rgb(0,0,0)"; 
+    ctx.fillRect(count,pos,1,40);
+
+  data.forEach(function(d,i) {
+    ctx.fillStyle = "rgb("+d*25+","+d*25+","+d*25+")"; 
+    ctx.fillRect(count,i*2+pos,1,1);
+  })
+
+
+  // ctx.fillStyle = "rgb("+color+","+color+","+color+")"; 
+  // ctx.fillRect(count,0,10,10);
+}
+
+
+
+</script>
+</body>
+</html>

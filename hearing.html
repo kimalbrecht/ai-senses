@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=0'/>
+<meta charset='utf-8'/>
+  <style>
+    body{
+      background: black;
+    }
+    video {
+      object-fit: cover;
+    }
+    #container{
+      visibility: hidden;
+    }
+    #visCanvas{
+      padding: 0;
+      margin: auto;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+
+</head>
+<body>
+
+<canvas id="visCanvas"></canvas>
+
+<script>
+
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+var audioContext = new AudioContext();
+var audioInput = null,
+    realAudioInput = null,
+    inputPoint = null,
+    audioRecorder = null;
+var analyserContext = null;
+var freqByteData = null;
+
+var windowW = window.innerWidth;
+var windowH = window.innerHeight;
+
+var windowRect;
+
+if (windowW < windowH) {
+  windowRect = windowW;
+} else {
+  windowRect = windowH;
+}
+
+
+var c = document.getElementById("visCanvas");
+var ctx = c.getContext("2d");
+
+ctx.canvas.width  = windowRect;
+ctx.canvas.height = windowRect;
+ctx.fillStyle = "#FFFFFF";
+
+
+function updateAnalysers(time) {
+
+    freqByteData = new Uint8Array(analyserNode.frequencyBinCount);
+    analyserNode.getByteFrequencyData(freqByteData); 
+
+    // console.log(freqByteData);
+
+    vis(freqByteData)
+    
+    setTimeout(function() {
+        window.requestAnimationFrame( updateAnalysers );
+    }, 50);
+    
+}
+
+var count = 0;
+var pos = 0;
+var pxWidth = 1;
+
+function vis(data) {
+
+  pos += 1;
+  count = 0; 
+  if (pos>windowRect) {
+    pos = 0;
+  }
+
+  data.forEach(function(d,i) {
+    count += 1;
+    // if (count > windowRect) { 
+    //   count = 0; 
+    // }
+    ctx.fillStyle = "rgb("+d+","+d+","+d+")"; 
+    ctx.fillRect(count*pxWidth,pos,pxWidth,1);
+  })
+}
+
+
+function gotStream(stream) {
+    inputPoint = audioContext.createGain();
+
+    // Create an AudioNode from the stream.
+    realAudioInput = audioContext.createMediaStreamSource(stream);
+    audioInput = realAudioInput;
+    audioInput.connect(inputPoint);
+
+    analyserNode = audioContext.createAnalyser();
+
+    function nearestPow2( aSize ){
+      return Math.pow( 2, Math.ceil( Math.log( aSize ) / Math.log( 2 ) ) ); 
+    }
+
+    var soundSize = nearestPow2(windowRect);
+
+    pxWidth = (windowRect/(soundSize/2)).toFixed(1);
+
+    analyserNode.fftSize =  soundSize; //32768;
+    inputPoint.connect( analyserNode );
+
+    updateAnalysers();
+}
+
+function initAudio() {
+        if (!navigator.getUserMedia)
+            navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+        if (!navigator.cancelAnimationFrame)
+            navigator.cancelAnimationFrame = navigator.webkitCancelAnimationFrame || navigator.mozCancelAnimationFrame;
+        if (!navigator.requestAnimationFrame)
+            navigator.requestAnimationFrame = navigator.webkitRequestAnimationFrame || navigator.mozRequestAnimationFrame;
+
+    navigator.getUserMedia(
+        {
+            "audio": {
+
+            },
+        }, gotStream, function(e) {
+            alert('Error getting audio');
+        });
+}
+
+window.addEventListener('load', initAudio );
+
+</script>
+</body>
+</html>
