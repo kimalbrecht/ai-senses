@@ -18,7 +18,12 @@ a:hover{
 }
 
 #headline{
-	font-size: 8.0rem;
+	font-size: 7.0rem;
+}
+@media screen and (min-width: 430px) {
+	#headline { 
+		font-size: 8.0rem;
+	}
 }
 
 .liveTag{
@@ -42,6 +47,17 @@ a:hover{
 }
 .description{
 	display: none;
+}
+.introDescr{
+	font-weight: 100;
+	font-size: 3rem;
+	line-height: 3.5rem;
+	text-align: left;
+}
+@media screen and (min-width: 550px) {
+	.introDescr { 
+		text-align: right;
+	}
 }
 .sensorDescr{
 	font-size: 1.3rem;
