@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>AI Senses</title>
+  <meta name="description" content="">
+  <meta name="author" content="Kim Albrecht">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <style type="text/css">
+    .thumbnail img{
+      /*height: 0%;*/
+      width: auto;
+      height: 300px;
+    }
+    .grid-image-item{
+      overflow:auto;
+      margin: 5px;
+    }
+
+    /** LIGHTBOX MARKUP **/
+
+    .lightbox {
+      /** Default lightbox to hidden */
+      display: none;
+
+      /** Position and style */
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.8);
+    }
+
+    .lightbox img {
+      /** Pad the lightbox image */
+      max-width: 90%;
+      max-height: 80%;
+      margin-top: 2%;
+    }
+
+    .lightbox:target {
+      /** Remove default browser outline */
+      outline: none;
+
+      /** Unhide lightbox **/
+      display: block;
+    }
+    
+  </style>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row" style="margin-top: 8%">
+      <div class="ten columns offset-by-two">
+        <h1 id="headline">AI Senses</h1>
+      </div>
+    </div>
+    <div class="row">
+<!--       <div class="five columns offset-by-one">
+        <p class="introDescr">Ai Senses visualizes sensor data of machines that surround us every day to develop an understanding how they experience the world.</p>
+      </div> -->
+      <div class="eight columns">
+        <p class="introDescr">As part of the machine experience exhibition at the Harvard Art Museums, AI Senses was on show at the lightbox gallery for one weekend.</p>
+      </div>
+    </div>
+
+    <div class="grid"> <!-- Sensor Grid -->
+      <div class="grid-image-item thumbnail">
+        <a href="#image_0">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_0.jpg">
+        </a>
+      </div>
+
+      <div class="grid-image-item thumbnail">
+        <a href="#image_1">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_1.jpg">
+        </a>
+      </div>
+      
+      <div class="grid-image-item thumbnail">
+        <a href="#image_2">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_2.jpg">
+        </a>
+      </div>
+      
+      <div class="grid-image-item thumbnail">
+        <a href="#image_3">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_3.jpg">
+        </a>
+      </div>
+
+      <div class="grid-image-item thumbnail">
+        <a href="#image_4">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_4.jpg">
+        </a>
+      </div>
+
+      <div class="grid-image-item thumbnail">
+        <a href="#image_5">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_5.jpg">
+        </a>
+      </div>
+
+      <div class="grid-image-item thumbnail">
+        <a href="#image_6">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_6.jpg">
+        </a>
+      </div>
+      
+      <div class="grid-image-item thumbnail">
+        <a href="#image_7">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_7.jpg">
+        </a>
+      </div>
+
+      <div class="grid-image-item thumbnail">
+        <a href="#image_8">
+          <img src="images/harvard_art_museums/medium/AI Senses Exhibit Images_8.jpg">
+        </a>
+      </div>
+      
+    </div> <!-- Sensor Grid -->
+
+    <a href="#_" class="lightbox" id="image_0">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_0.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_1">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_1.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_2">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_2.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_3">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_3.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_4">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_4.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_5">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_5.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_6">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_6.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_7">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_7.jpg">
+    </a>
+    <a href="#_" class="lightbox" id="image_8">
+      <img src="images/harvard_art_museums/large/AI Senses Exhibit Images_8.jpg">
+      <p>Image by Chris Molinski</p>
+    </a>
+
+    <!-- Descr. Long -->
+
+    <div id="row" style="margin-top: 10%;"> <!-- Footer -->
+        <div class="eight columns offset-by-two" style="border-top: 1px solid #eee;">
+            <div id="row" style="margin: 5%;">
+              <div class="nine columns">
+                <p>
+                  AI Senses is a project by by <a href="http://kimalbrecht.com/">Kim Albrecht</a> in collaboration with the <a href="http://metalab.harvard.edu/">metaLAB (at) Harvard</a> and supported by the <a href="">Berkman Klein Center for Internet &amp; Society</a>. The project is part of a larger initiative researching the boundaries between artificial intelligence and society.
+                    <br><br>
+                    <small>Copyright &copy; 2017 Kim Albrecht all rights reserved</small>
+                </p>
+              </div>
+              <div class="two columns offset-by-one">
+                  <img src="images/ml_logo.gif" style="width: 80px; height: 80px;">
+              </div>
+            </div>
+        </div>
+        
+    </div> <!-- Footer -->
+
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- JS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="libs/isotope.pkgd.min.js"></script>
+
+  <script>
+    
+    var grid = document.querySelector('.grid');
+
+    var iso = new Isotope( grid, {
+      // options
+      itemSelector: '.grid-image-item',
+      layoutMode: 'fitRows', // fitRows // masonry
+      sortBy: 'random'
+    });
+
+    window.onload = function() {
+      iso.arrange();
+    }
+
+    setTimeout(function() { iso.arrange(); }, 1000);
+    setTimeout(function() { iso.arrange(); }, 3000);
+
+  </script>
+  
+</body>
+</html>
