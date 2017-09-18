@@ -48,7 +48,7 @@ if (window.DeviceMotionEvent) {
 function deviceMotion() {
   window.addEventListener('devicemotion', function(event) {
     
-    accelerationX = event.acceleration.x; // from 0 to 360
+    accelerationX = event.acceleration.z; // from 0 to 360
 
     draw(accelerationX, 0);
 
