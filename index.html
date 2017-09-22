@@ -42,10 +42,10 @@
     </div>
     <div class="row">
       <div class="five columns offset-by-one">
-        <p class="introDescr">Ai Senses visualizes sensor data of machines that surround us every day to develop an understanding how they experience the world.</p>
+        <p class="introDescr">AI Senses visualizes sensor data of the machines that surround us to develop an understanding how they experience the world.</p>
       </div>
       <div class="six columns">
-        <p class="sensorDescr">In current times, machine learning and artificial intelligence are buzzwords. But they are more than that—they influence our behaviors and understandings of the technologies they describe and the world they make. A lack of understanding of how these systems operate on their own terms is dangerous. How can we live and interact with this alien species, which we set forth into the world, if we know it through interfaces constructed to make the machine feel closer to the world we already know? This project visualizes sensor data that our phones and  computers collect and digest on our behalf, to help us understand how these machines experience the world.</p>
+        <p class="sensorDescr">In current times, machine learning and artificial intelligence are buzzwords. But they are more than that—they influence our behavior as well as our conception  of the technologies themselves and the world they represent. A lack of understanding of how these systems operate on their own terms is dangerous. How can we live with, trust, and interact with this alien species, which we set forth into the world, if we know it only through interfaces designed to make the machine unnaturally akin to the world we already know? This project visualizes raw sensor data that our phones and computers collect and process, to help us understand how these machines experience the world.</p>
       </div>
     </div>
 
@@ -57,7 +57,7 @@
         <div class="sensorHeadline"><h6>Locating <span id="liveLocating" class="liveTag">live</span></h6></div>
         <div class="description" id="locatingDescr">
           <p class="sensorDescr">
-            Each vertical line represents one request of the latitude and longitude geolocation of the device. Rather than displaying the two numbers that are returned the visualization displays every digit of those numbers individually. What becomes visible is the accuracy on which the device locates itself. It is not uncommon that devices return their location with an accuracy to the sixth or seventh decimal place. This means the device returns its position to an accuracy of a few centimeters/inch. The interesting part is that on every request the location of the instrument, even when it is not in motion, is constantly changing. The visualization makes these constant guessing of the machine visible. Each digit of the latitude and longitude values are represented by saturation of blue and magenta. Both created patterns are overlaid onto each other. Either the bottom layer is subtracted from the top layer or the other way around always to return a positive value.
+            Each vertical line represents one request of the latitudinal and longitudinal geolocation of the device. Rather than displaying the two numbers that are returned the visualization displays every digit of those numbers individually. What becomes visible is the accuracy on which the device locates itself. It is not uncommon that devices return their location with an accuracy to the sixth or seventh decimal place. This means the device can know its position to an accuracy of a few centimeters/inches. The interesting part is that on every request, the location of the instrument, even when it is not in motion, is constantly changing. The visualization makes visible this constant guessing of the machine. Each digit of the latitude and longitude values are represented by saturation of blue and magenta. Both created patterns are overlaid: the difference between the bottom layer and the top layer is calculated is represented as a positive value.
           </p>
           <p class="goLive" id="locatingLiveButton">Open Live Visualization</p>
         </div>
@@ -70,7 +70,7 @@
         <div class="sensorHeadline"><h6>Moving <span id="liveMoving" class="liveTag">live</span></h6></div>
         <div class="description" id="movingDescr">
           <p class="sensorDescr">
-            This visualization represents the device motion sensor. Each dot stands for one digit returned by the apparatus. The longer the returned numbers, the more points from top to bottom of each row. Darker lines symbolize negative-, brighter one's positive numbers. Time is drawn from left to right for each row.
+            This visualization represents the device motion sensor. Each dot stands for one digit returned by the apparatus. The longer the returned numbers, the more points from top to bottom of each row. Darker lines symbolize negative numbers, brighter lines symbolize positive numbers. Time is drawn from left to right for each row.
           </p>
           <p class="goLive" id="movingLiveButton">Open Live Visualization</p>
         </div>
@@ -83,7 +83,7 @@
         <div class="sensorHeadline"><h6>Seeing <span id="liveSeeing" class="liveTag">live</span></h6></div>
         <div class="description" id="seeingDescr">
           <p class="sensorDescr">
-            The code behind the visualization captures an image from the camera of the device. This picture gets stored in the JPEG format encoded in base64. Base64 is a binary-to-text encoding scheme: A = 0000, B = 000001, C = 000010. The total encoding holds 64 characters with a one to one mapping into binary code. The visualization maps this 64 characters to 64 values between black and white and draws each character on the screen from left to right and top to bottom. This process repeats every second.
+            The code behind the visualization captures an image from the camera of the device. This picture gets stored in the JPEG format encoded in base64. Base64 is a binary-to-text encoding scheme: A = 0000, B = 000001, C = 000010. The total encoding holds 64 characters with a one-to-one mapping into binary code. The visualization maps these 64 characters to 64 grayscale values between black and white, and displays each value on the screen from left to right and top to bottom. This process repeats every second.
           </p>
           <p class="goLive" id="seeingLiveButton">Open Live Visualization</p>
         </div>
@@ -96,7 +96,7 @@
         <div class="sensorHeadline"><h6>Hearing <span id="liveHearing" class="liveTag">live</span></h6></div>
         <div class="description" id="hearingDescr">
           <p class="sensorDescr">
-            The code captures the frequency data of the microphone of the device. Each frequency value ranges between 0 and 255. The number of frequencies collected can range between 32 and 32768. Frequencies are drawn from left, low-, to the right, high-frequency. The range of each frequency is illustrated by each point from 0 black to 255 white. This data is requested 20 times per second and time moves from top to bottom.
+            The code captures the frequency data of the microphone of the device. Each frequency value ranges between 0 and 255. The number of frequencies collected can range between 32 and 32768. Frequencies are drawn from left (low frequency), to the right (high-frequency). The range of each frequency is illustrated by each point from 0 (black) to 255 (white). This data is requested 20 times per second and time moves from top to bottom.
           </p>
           <p class="goLive" id="hearingLiveButton">Open Live Visualization</p>
         </div>
@@ -109,7 +109,7 @@
         <div class="sensorHeadline"><h6>Touching <span id="liveTouching" class="liveTag">live</span></h6></div>
         <div class="description" id="touchingDescr">
           <p class="sensorDescr">
-            Each vertical line represents the vertical and horizontal position of the finger on the device compared to the total height and width of the screen. Rather than displaying the two numbers that are returned the visualization displays every digit of those often long decimal places individually. The width of each drawn line depends on the time between two incoming signals. Both created patterns are overlaid onto each other. Either the bottom layer is subtracted from the top layer or the other way around always to return a positive value.
+            Each vertical row represents the vertical and horizontal position of the finger on the screen of the device compared against the total height and width of the screen. Rather than displaying the two numbers representative of the location of the user’s finger, the visualization uses every digit of those often long decimal places individually. The width of each drawn line depends on the time between two incoming signals. Both created patterns are overlaid onto each other. The difference between the bottom and top layer is calculated to always return a positive value.
           </p>
           <p class="goLive" id="touchingLiveButton">Open Live Visualization</p>
         </div>
@@ -122,7 +122,7 @@
         <div class="sensorHeadline"><h6>Orienting <span id="liveOrienting" class="liveTag">live</span></h6></div>
         <div class="description" id="orientingDescr">
           <p class="sensorDescr">
-            This graphic visually recodes the gyro sensor that is built into most contemporary smartphones. Similar to the locating visualization each digit is represented rather than the entire number as there is a very high accuracy in the sensory output. The x-axis of the gyroscope returns the direction the phone is pointing towards as a number between 0 and 360. But rather than returning an integer, depending on the device, the number can have more than 20 decimal places. The machine returns the direction of the phone on a level of air vibrations.
+            This graphic visually recodes the gyro sensor that is built into most contemporary smartphones. Similar to the LOCATING visualization, each individual digit is represented – rather than the entire number – as there is very high accuracy in the sensory output. The x-axis of the gyroscope returns the direction the phone is pointing toward as a number between 0 and 360. But rather than returning an integer, depending on the device, the number can have more than 20 decimal places. The machine returns the direction of the phone on a level of air vibrations.
           </p>
           <p class="goLive" id="orientingLiveButton">Open Live Visualization</p>
         </div>
@@ -131,30 +131,36 @@
     </div> <!-- Sensor Grid -->
     
     <div id="row" style="margin-top: 10%;"> <!-- Descr. Long -->
-      <div class="six columns offset-by-three">
-        <p>
-          Contemporary culture is unimaginable without the machines that surround us every day. Our knowledge depends on Google search results, our music taste on the mixes Spotify creates for us and our consumption on Amazon recommendations. This strange new world became part of our reality in a very short timeframe. Interface design creates this natural feeling. But if we want to live with these devices and understand them, we cannot just rely on the machines becoming something easily understandable to us. We need to develop an understanding of how these devices experience our world.
+      <div class="twelve columns offset-by-two">
+        <p class="six columns">
+          Contemporary culture is unimaginable without the machines that surround us every day. Our knowledge is influenced by Google search results, our music taste by the mixes Spotify creates for us, and our shopping choices by Amazon recommendations. This strange new world became part of our reality in a very short time. Human-facing interface design makes these systems feel natural, as if they are really of our world. But if we want to live with these devices and understand them, we should not soley rely on the machines becoming something easily understandable to us. <b><i>We need to develop an understanding of how these devices experience our world.</i></b>
+        </p>
+      </div>
+      <div class="twelve columns offset-by-five">
+        <p class="six columns">
+          The visualizations here explore a number of sensory domains: seeing, locating, orienting, hearing, moving, and touching. Rather than yielding machine’s sensory data in ways that we intuitively grasp, however, these visualization try to get closer to the machine’s experience. They show us a number of ways in which the machine’s reality departs from our own. With many of its sensors, for example, the machine is operating in a timescale that is too fast to understand; the orientation sensor returns data up to 300 times per second. This too quick  to draw each of these values on the screen, and also too quick for us to comprehend. In most cases, to make these visualizations, the machine had to be tamed and slowed for us to perceive its “experience.”
         </p>
       </div>
     </div>
     <div id="row">
-      <div class="six columns offset-by-three">
-        <p>
-          The visualizations here explore a number of sensory domains: seeing, locating, orienting, and touching. Rather than yielding machine’s sensory data in ways that we intuitively grasp, however, these visualization try to get closer to the machine’s experience. And they show us a number of ways in which the machine’s reality departs from our own. With many of its sensors, for example, the machine is operating in a timescale that is too fast to understand; the orientation sensor returns data up to 300 times per second. This is not only too quick to manage to draw each of these values on the screen, but also too quick for us to comprehend. In most cases, to make these visualizations, the machine had to be tamed and slowed down for us to perceive its experience.
+      <div class="twelve columns offset-by-two">
+        <p class="six columns">
+          A second and more worrying finding is the similarity among many of the images. Seeing, hearing, and touching, for humans, are qualitatively different experiences of the world; they lead to a wide variety of understandings, emotions, and beliefs. For the machine, they are very much the same. For the machine, all of these senses are strings of numbers with a limited range of actual possibilities. While some of these sensory experiences—notably temperature—have long been given numerical value, their effects on us remain ineffable. Nowadays, however, it is not only temperature that can be reduced to a discrete number, but seemingly anything. But is this really true? Isn’t there something that our current measures of temperature does not reveal about the entire spectrum, from crisp cold to feverishly hot? And is this a question of more data points, or is there a deeper disconnect, reflective of a difference in kind, in these translations?
         </p>
       </div>
-    </div> 
-    <div id="row">
-      <div class="six columns offset-by-three">
-        <p>
-          A second and more worrying finding is the similarity among many of the images. Seeing, hearing, touching are very different human experiences of the world, which lead to a wide variety of understandings, emotions or feelings. For the machine, they are very much the same. All of these senses are strings of numbers with a limited range of actual possibilities. While some of these sensory experiences—notably temperature—have long been given numerical value, their effects on us remain ineffable. Nowadays, however, not only temperature may be resolved to a number, but seemingly anything. But is this really true? Isn’t there something that our current measures of temperature cannot reveal about the entire spectrum from damp or crisp cold to feverish heat? And is this only a question of more data points? The entire orientation of a machine towards the world is mediated by numbers. For the machine, reality is binary—a torrent of off and on. Any knowledge we accomplish through the machine about the world goes through the process of this abstraction. As we become more dependent on our machines, we need to understand these underlying boundaries of the form of abstraction that takes place.
+      <div class="twelve columns offset-by-five">
+        <p class="six columns">
+          The entire orientation of a machine towards the world is mediated by numbers. For the machine, reality is binary—a torrent of on and off. Any knowledge about the world that we learn from the machine goes through this process of abstraction. As we become more dependent on our machines, we need to understand the underlying limits and boundaries of this abstraction.
         </p>
       </div>
     </div> 
 
-    <div id="row" style="margin-top: 10%;">
-      <div class="eight columns offset-by-two">
-        <a href="harvard_art_museums_exhibit.html"><h5>Images from the exhibition at the Harvard Art Museums</h5></a>
+    <div id="row">
+      <div class="eight columns offset-by-three" style="margin-top: 10%; margin-bottom: 10%;">
+        <h5>Further Explorations</h5>
+        <div class="ten columns offset-by-one" >
+          <a href="harvard_art_museums_exhibit.html"><p style="font-size: 120%">Harvard Art Museums exhibition</p></a>
+        </div>
       </div>
     </div> 
 
@@ -165,13 +171,13 @@
             <div id="row" style="margin: 5%;">
               <div class="nine columns">
                 <p>
-                  AI Senses is a project by by <a href="http://kimalbrecht.com/">Kim Albrecht</a> in collaboration with the <a href="http://metalab.harvard.edu/">metaLAB (at) Harvard</a> and supported by the <a href="">Berkman Klein Center for Internet &amp; Society</a>. The project is part of a larger initiative researching the boundaries between artificial intelligence and society.
+                  AI Senses is a project by by <a href="http://kimalbrecht.com/">Kim Albrecht</a> in collaboration with the <a href="http://metalab.harvard.edu/">metaLAB (at) Harvard</a>, and supported by the <a href="">Berkman Klein Center for Internet &amp; Society</a>. The project is part of a larger initiative researching the boundaries between artificial intelligence and society.
                     <br><br>
                     <small>Copyright &copy; 2017 Kim Albrecht all rights reserved</small>
                 </p>
               </div>
-              <div class="two columns offset-by-one">
-                  <img src="images/ml_logo.gif" style="max-width:100%;">
+              <div class="three columns">
+                  <img src="images/ml_logo.gif" style="width:100%; max-width:150px;">
               </div>
             </div>
         </div>
