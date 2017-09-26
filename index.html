@@ -59,6 +59,9 @@
           <p class="sensorDescr">
             Each vertical line represents one request of the latitudinal and longitudinal geolocation of the device. Rather than displaying the two numbers that are returned the visualization displays every digit of those numbers individually. What becomes visible is the accuracy on which the device locates itself. It is not uncommon that devices return their location with an accuracy to the sixth or seventh decimal place. This means the device can know its position to an accuracy of a few centimeters/inches. The interesting part is that on every request, the location of the instrument, even when it is not in motion, is constantly changing. The visualization makes visible this constant guessing of the machine. Each digit of the latitude and longitude values are represented by saturation of blue and magenta. Both created patterns are overlaid: the difference between the bottom layer and the top layer is calculated is represented as a positive value.
           </p>
+          <p class="sensorDescr">
+            While the location sensor works on many devices and browsers, it often behaves very differently. Try different machines and web browsers.
+          </p>
           <p class="goLive" id="locatingLiveButton">Open Live Visualization</p>
         </div>
       </div>
@@ -71,6 +74,9 @@
         <div class="description" id="movingDescr">
           <p class="sensorDescr">
             This visualization represents the device motion sensor. Each dot stands for one digit returned by the apparatus. The longer the returned numbers, the more points from top to bottom of each row. Darker lines symbolize negative numbers, brighter lines symbolize positive numbers. Time is drawn from left to right for each row.
+          </p>
+          <p class="sensorDescr">
+            Motion sensors are most common in smartphones and tablets. Only very few personal computers have them. If you are using a phone or a tablet and you can not see the live visualization try switching browsers.
           </p>
           <p class="goLive" id="movingLiveButton">Open Live Visualization</p>
         </div>
@@ -85,6 +91,9 @@
           <p class="sensorDescr">
             The code behind the visualization captures an image from the camera of the device. This picture gets stored in the JPEG format encoded in base64. Base64 is a binary-to-text encoding scheme: A = 000000, B = 000001, C = 000010. The total encoding holds 64 characters with a one-to-one mapping into binary code. The visualization maps these 64 characters to 64 grayscale values between black and white, and displays each value on the screen from left to right and top to bottom. This process repeats every second.
           </p>
+          <p class="sensorDescr">
+            While many phones and tablets have a camera their access over the web today often only works on personal computers. If you are on a personal computer and the sensor is not live, try switching browsers.
+          </p>
           <p class="goLive" id="seeingLiveButton">Open Live Visualization</p>
         </div>
       </div>
@@ -97,6 +106,9 @@
         <div class="description" id="hearingDescr">
           <p class="sensorDescr">
             The code captures the frequency data of the microphone of the device. Each frequency value ranges between 0 and 255. The number of frequencies collected can range between 32 and 32768. Frequencies are drawn from left (low frequency), to the right (high-frequency). The range of each frequency is illustrated by each point from 0 (black) to 255 (white). This data is requested 20 times per second and time moves from top to bottom.
+          </p>
+          <p class="sensorDescr">
+            Microphone web access is restricted on most phones and tablets. Most probably this sensor will work on your laptop or pc. 
           </p>
           <p class="goLive" id="hearingLiveButton">Open Live Visualization</p>
         </div>
@@ -111,6 +123,9 @@
           <p class="sensorDescr">
             Each vertical row represents the vertical and horizontal position of the finger on the screen of the device compared against the total height and width of the screen. Rather than displaying the two numbers representative of the location of the user’s finger, the visualization uses every digit of those often long decimal places individually. The width of each drawn line depends on the time between two incoming signals. Both created patterns are overlaid onto each other. The difference between the bottom and top layer is calculated to always return a positive value.
           </p>
+          <p class="sensorDescr">
+            As ‘touch’ in the form of mouse gestures or screen contact is such a common gesture in graphical user interfaces, this visualization will work on nearly all devices. 
+          </p>
           <p class="goLive" id="touchingLiveButton">Open Live Visualization</p>
         </div>
       </div>
@@ -123,6 +138,9 @@
         <div class="description" id="orientingDescr">
           <p class="sensorDescr">
             This graphic visually recodes the gyro sensor that is built into most contemporary smartphones. Similar to the LOCATING visualization, each individual digit is represented – rather than the entire number – as there is very high accuracy in the sensory output. The x-axis of the gyroscope returns the direction the phone is pointing toward as a number between 0 and 360. But rather than returning an integer, depending on the device, the number can have more than 20 decimal places. The machine returns the direction of the phone on a level of air vibrations.
+          </p>
+          <p class="sensorDescr">
+            Most phones and tablets nowadays have a gyro sensor. It will be harder to find in personal computers.
           </p>
           <p class="goLive" id="orientingLiveButton">Open Live Visualization</p>
         </div>
